@@ -55,6 +55,32 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Financial dashboard", path: "/projects/financial-performance/financial-dashboard.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Dashboard export", path: "/projects/financial-performance/financial-dashboard.pdf", format: "PDF", group: "Dashboard" },
     ],
+    showcases: [
+      {
+        title: "Financial dashboard — 2024",
+        description: "Headline revenue, profit and margin measures with monthly trends and expense comparisons.",
+        image: "/projects/financial-performance/assets/financial-performance-2024.png",
+        alt: "2024 financial dashboard with revenue, gross profit, margin, net profit and expense charts",
+        width: 1331,
+        height: 747,
+      },
+      {
+        title: "Performance versus the prior period",
+        description: "Department and expense-group variances compared with the preceding period.",
+        image: "/projects/financial-performance/assets/financial-performance-vs-prior-period.png",
+        alt: "Financial dashboard showing actual expenses compared with the prior period by department and expense group",
+        width: 1327,
+        height: 745,
+      },
+      {
+        title: "Performance versus the prior year",
+        description: "A year-over-year view of expense variances across departments and summary groups.",
+        image: "/projects/financial-performance/assets/financial-performance-vs-prior-year.png",
+        alt: "Financial dashboard showing actual expenses compared with the prior year by department and expense group",
+        width: 1326,
+        height: 743,
+      },
+    ],
   },
   {
     slug: "hospital-operations",
@@ -102,9 +128,25 @@ export const portfolioProjects: PortfolioProject[] = [
         image: "/projects/hospital-operations/star-schema.svg",
         alt: "Illustrative star schema with a central FactVisit table connected to eight dimensions",
       },
+      {
+        title: "Patient analytics",
+        description: "A report page for comparing visits, admissions, outpatient activity and patient experience.",
+        image: "/projects/hospital-operations/assets/hospital-patient-analytics.png",
+        alt: "Hospital patient analytics dashboard with visit, admission and outpatient metrics and department comparisons",
+        width: 1326,
+        height: 747,
+      },
+      {
+        title: "Patient summary",
+        description: "A filtered report view that supports closer exploration of visit and service details.",
+        image: "/projects/hospital-operations/assets/hospital-patient-summary.png",
+        alt: "Hospital patient summary dashboard with filters and a detailed visit table",
+        width: 1317,
+        height: 742,
+      },
     ],
     notice:
-      "The supplied healthcare project records were confirmed as synthetic by the portfolio owner. This dashboard is for analytics demonstration only, not for clinical decision-making.",
+      "The report screenshots were confirmed by the portfolio owner as synthetic or cleared for public release. This dashboard is for analytics demonstration only, not for clinical decision-making.",
   },
   {
     slug: "healthcare-analytics",
@@ -142,9 +184,17 @@ export const portfolioProjects: PortfolioProject[] = [
         image: "/projects/healthcare-analytics/sql/healthcare-utilization-query.svg",
         alt: "SQL code preview showing a healthcare utilization summary by medical condition",
       },
+      {
+        title: "Patient analytics",
+        description: "An additional report page for exploring healthcare utilization and patient-level dashboard detail.",
+        image: "/projects/healthcare-analytics/assets/healthcare-patient-analytics.png",
+        alt: "Healthcare patient analytics dashboard with visit measures, condition comparisons and detailed report visuals",
+        width: 1322,
+        height: 742,
+      },
     ],
     notice:
-      "The supplied healthcare records were confirmed as synthetic by the portfolio owner. This is a descriptive analytics example, not a diagnostic or clinical decision-support tool.",
+      "The report screenshots were confirmed by the portfolio owner as synthetic or cleared for public release. This is a descriptive analytics example, not a diagnostic or clinical decision-support tool.",
   },
   {
     slug: "hotel-revenue",
@@ -171,6 +221,16 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Dashboard report", path: "/projects/hotel-revenue/hotel-analysis.pdf", format: "PDF", group: "Dashboard" },
       { label: "Hotel revenue historical data", path: "/projects/hotel-revenue/hotel-revenue-history.xlsx", format: "XLSX", group: "Source data" },
       { label: "Analysis steps", path: "/projects/hotel-revenue/hotel-analysis-steps.pdf", format: "PDF", group: "Documentation" },
+    ],
+    showcases: [
+      {
+        title: "Hotel reports",
+        description: "A detail view of hotel revenue and visit measures across year, quarter, month and weekday.",
+        image: "/projects/hotel-revenue/assets/hotel-reports.png",
+        alt: "Hotel report page with revenue KPIs and year, month and weekday breakdown tables",
+        width: 991,
+        height: 743,
+      },
     ],
   },
   {
@@ -223,6 +283,16 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Dashboard practice files", path: "/projects/sales-performance/biscuit-sales-dashboard-practice.zip", format: "ZIP", group: "Source data" },
       { label: "Dashboard requirements", path: "/projects/sales-performance/biscuit-dashboard-requirements.pdf", format: "PDF", group: "Documentation" },
     ],
+    showcases: [
+      {
+        title: "Sales dashboard detail",
+        description: "Product, location, customer and payment-method views alongside core sales measures.",
+        image: "/projects/sales-performance/assets/sales-performance-detail.png",
+        alt: "Excel sales dashboard with revenue, cost, profit, margin, customer and product breakdowns",
+        width: 1702,
+        height: 862,
+      },
+    ],
     notice:
       "The XLSM workbook contains macros. Review macros according to your organization's security practices before enabling them in Excel.",
   },
@@ -256,6 +326,24 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Product data", path: "/projects/wes-business-sales/data/products_table.csv", format: "CSV", group: "Source data" },
       { label: "Salesperson data", path: "/projects/wes-business-sales/data/sales_persons_table.csv", format: "CSV", group: "Source data" },
       { label: "Dashboard tasks", path: "/projects/wes-business-sales/dashboard-tasks.pdf", format: "PDF", group: "Documentation" },
+    ],
+    showcases: [
+      {
+        title: "Profit analysis",
+        description: "Explore revenue, gross profit and margin alongside customer and product profitability.",
+        image: "/projects/wes-business-sales/assets/wes-business-profit.png",
+        alt: "Wes Business profit dashboard with gross profit, margin, customer age and product category analysis",
+        width: 1863,
+        height: 881,
+      },
+      {
+        title: "Store performance",
+        description: "Compare store revenue with targets and inspect the variance by location.",
+        image: "/projects/wes-business-sales/assets/wes-business-store.png",
+        alt: "Wes Business store dashboard showing revenue versus target and store-level variance",
+        width: 1885,
+        height: 845,
+      },
     ],
     notice:
       "The workbook and supporting records were confirmed as synthetic or cleared for public portfolio release.",
