@@ -52,7 +52,15 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
           </div>
           {project.preview ? (
             <div className="detail-preview">
-              <Image src={project.preview} alt={`${project.title} dashboard preview`} width={1280} height={720} priority sizes="(max-width: 800px) 100vw, 50vw" />
+              <Image
+                src={project.preview}
+                alt={`${project.title} dashboard preview`}
+                width={1280}
+                height={720}
+                priority
+                sizes="(max-width: 800px) 100vw, 50vw"
+                style={{ objectFit: "contain", objectPosition: "center" }}
+              />
               <span>PROJECT PREVIEW</span>
             </div>
           ) : (
