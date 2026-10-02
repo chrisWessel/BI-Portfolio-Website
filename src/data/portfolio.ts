@@ -42,9 +42,6 @@ export const portfolioProjects: PortfolioProject[] = [
     files: [
       { label: "Financial dashboard", path: "/projects/financial-performance/financial-dashboard.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Dashboard export", path: "/projects/financial-performance/financial-dashboard.pdf", format: "PDF", group: "Dashboard" },
-      { label: "Dashboard data model", path: "/projects/financial-performance/ultimate-dashboard-data-model.xlsx", format: "XLSX", group: "Source data" },
-      { label: "Worksheet — Alteryx version", path: "/projects/financial-performance/ultimate-dashboard-worksheet-alteryx.xlsx", format: "XLSX", group: "Source data" },
-      { label: "Dashboard worksheet", path: "/projects/financial-performance/ultimate-dashboard-worksheet.xlsx", format: "XLSX", group: "Source data" },
     ],
   },
   {
