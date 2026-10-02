@@ -25,7 +25,9 @@ Dashboard files and source data that are approved for publication are stored und
 
 Power BI (`.pbix`) and Excel (`.xlsx`, `.xlsm`, `.xlsb`) files are downloads, not live web embeds. Visitors can open them in Power BI Desktop or Excel. PDF previews and screenshots provide an immediate browser view.
 
-The checked-in portfolio source excludes Fastjet company-finance files. Airline reviewer data and its report are withheld until sanitized equivalents are available, because the report can embed the original names and free-text reviews.
+SQL code previews and the illustrative star-schema diagram are SVGs stored alongside their project files. The Stroke project page includes the report, workbook, and supplied supporting image assets.
+
+Fastjet company-finance files remain excluded. Airline Customer Experience is a separate project; reviewer names and free-text content are not published, and the original PBIX is held back until a de-identified report is available.
 
 ## Deploy on Vercel
 

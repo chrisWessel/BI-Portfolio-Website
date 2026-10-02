@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrative hospital operations star schema</title>
+  <desc id="desc">A dimensional model with a central FactVisit table linked to date, patient, provider, department, diagnosis, procedure and insurance dimensions.</desc>
+  <rect width="1600" height="900" fill="#f5f4ee"/>
+  <text x="80" y="72" fill="#78827a" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="3">DATA MODEL · HOSPITAL OPERATIONS</text>
+  <text x="80" y="119" fill="#18231e" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">Star schema | visit-level analysis</text>
+  <text x="1520" y="73" text-anchor="end" fill="#78827a" font-family="Segoe UI, Arial, sans-serif" font-size="16">ILLUSTRATIVE MODEL</text>
+  <g fill="none" stroke="#9ea99d" stroke-width="4">
+    <path d="M379 250 L643 377"/><path d="M760 276 L735 340"/><path d="M990 276 L865 340"/><path d="M1220 250 L957 377"/>
+    <path d="M379 672 L643 557"/><path d="M760 648 L735 600"/><path d="M990 648 L865 600"/><path d="M1220 672 L957 557"/>
+  </g>
+  <g fill="#d75a37" stroke="#f5f4ee" stroke-width="7">
+    <circle cx="643" cy="377" r="8"/><circle cx="735" cy="340" r="8"/><circle cx="865" cy="340" r="8"/><circle cx="957" cy="377" r="8"/>
+    <circle cx="643" cy="557" r="8"/><circle cx="735" cy="600" r="8"/><circle cx="865" cy="600" r="8"/><circle cx="957" cy="557" r="8"/>
+  </g>
+  <g font-family="Segoe UI, Arial, sans-serif">
+    <g transform="translate(80 157)">
+      <rect width="300" height="180" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM DATE</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  DateKey</text><text x="18" y="105" fill="#47534c" font-size="15">    VisitDate</text><text x="18" y="135" fill="#47534c" font-size="15">    Year · Quarter</text><text x="18" y="165" fill="#47534c" font-size="15">    Month · Day</text>
+    </g>
+    <g transform="translate(460 126)">
+      <rect width="300" height="150" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM PATIENT</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  PatientKey</text><text x="18" y="105" fill="#47534c" font-size="15">    PatientID · Age</text><text x="18" y="135" fill="#47534c" font-size="15">    Gender · City · Race</text>
+    </g>
+    <g transform="translate(840 126)">
+      <rect width="300" height="150" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM PROVIDER</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  ProviderKey</text><text x="18" y="105" fill="#47534c" font-size="15">    ProviderID</text><text x="18" y="135" fill="#47534c" font-size="15">    Gender · Nationality</text>
+    </g>
+    <g transform="translate(1220 157)">
+      <rect width="300" height="180" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM DEPARTMENT</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  DepartmentKey</text><text x="18" y="105" fill="#47534c" font-size="15">    DepartmentID</text><text x="18" y="135" fill="#47534c" font-size="15">    DepartmentName</text>
+    </g>
+    <g transform="translate(80 582)">
+      <rect width="300" height="180" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM DIAGNOSIS</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  DiagnosisKey</text><text x="18" y="105" fill="#47534c" font-size="15">    DiagnosisID</text><text x="18" y="135" fill="#47534c" font-size="15">    Diagnosis</text>
+    </g>
+    <g transform="translate(460 648)">
+      <rect width="300" height="150" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM PROCEDURE</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  ProcedureKey</text><text x="18" y="105" fill="#47534c" font-size="15">    ProcedureID</text><text x="18" y="135" fill="#47534c" font-size="15">    Procedure</text>
+    </g>
+    <g transform="translate(840 648)">
+      <rect width="300" height="150" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM INSURANCE</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">PK  InsuranceKey</text><text x="18" y="105" fill="#47534c" font-size="15">    InsuranceID</text><text x="18" y="135" fill="#47534c" font-size="15">    Provider</text>
+    </g>
+    <g transform="translate(1220 582)">
+      <rect width="300" height="180" rx="8" fill="#fff" stroke="#d8d9d1" stroke-width="2"/>
+      <rect width="300" height="42" rx="8" fill="#e8eee5"/><text x="18" y="28" fill="#30493a" font-size="17" font-weight="700">DIM SERVICE</text>
+      <text x="18" y="75" fill="#47534c" font-size="15">    ServiceType</text><text x="18" y="105" fill="#47534c" font-size="15">    ReferralSource</text><text x="18" y="135" fill="#47534c" font-size="15">    RoomType</text>
+    </g>
+    <g transform="translate(640 340)">
+      <rect width="320" height="260" rx="10" fill="#1b2b24" stroke="#d75a37" stroke-width="4"/>
+      <rect width="320" height="48" rx="8" fill="#d75a37"/><text x="20" y="32" fill="#fff" font-size="19" font-weight="700">FACT VISIT</text>
+      <text x="20" y="85" fill="#d0e267" font-size="15">FK  DateKey · PatientKey</text>
+      <text x="20" y="115" fill="#d0e267" font-size="15">FK  ProviderKey · DepartmentKey</text>
+      <text x="20" y="145" fill="#d0e267" font-size="15">FK  DiagnosisKey · ProcedureKey</text>
+      <text x="20" y="175" fill="#d0e267" font-size="15">FK  InsuranceKey · ServiceKey</text>
+      <line x1="20" y1="190" x2="300" y2="190" stroke="#536359" stroke-width="1"/>
+      <text x="20" y="220" fill="#f5f4ee" font-size="14">TreatmentCost · MedicationCost</text>
+      <text x="20" y="245" fill="#f5f4ee" font-size="14">InsuranceCoverage · Satisfaction</text>
+    </g>
+  </g>
+  <text x="80" y="848" fill="#78827a" font-family="Segoe UI, Arial, sans-serif" font-size="15">Illustrative model keys; Patient and Provider lookups plus Date and Service dimensions can be shaped from the supplied tables and visit fields.</text>
+</svg>

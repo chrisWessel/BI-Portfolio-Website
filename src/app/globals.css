@@ -699,6 +699,104 @@ input:focus-visible {
   line-height: 1.8;
 }
 
+.craft-section {
+  padding: 95px 7.15% 100px;
+  background: var(--paper-bright);
+}
+
+.craft-section .section-heading {
+  margin-bottom: 34px;
+}
+
+.craft-grid,
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.project-showcases .showcase-grid {
+  grid-template-columns: 1fr;
+}
+
+.craft-card,
+.showcase-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--paper-bright);
+}
+
+.craft-card {
+  display: block;
+  transition: transform .2s ease, border-color .2s ease;
+}
+
+.craft-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.craft-image,
+.showcase-image {
+  overflow: hidden;
+  background: #111820;
+}
+
+.craft-image img,
+.showcase-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.craft-card > div:last-child,
+.showcase-copy {
+  padding: 19px 22px 22px;
+}
+
+.craft-card .eyebrow {
+  margin-bottom: 10px;
+}
+
+.craft-card h3,
+.showcase-copy h3 {
+  margin: 0 0 7px;
+  font-size: 18px;
+  letter-spacing: -.025em;
+}
+
+.craft-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 12px;
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.project-showcases {
+  padding: 72px 0 0;
+}
+
+.showcase-heading {
+  margin-bottom: 25px;
+}
+
+.showcase-heading h2 {
+  margin: 10px 0 0;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -.055em;
+}
+
+.showcase-copy p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
 .site-footer {
   min-height: 92px;
   padding: 20px 7.15%;
@@ -953,6 +1051,19 @@ input:focus-visible {
   color: var(--accent-dark);
 }
 
+.file-kind-preview {
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  background: #f2f2ed;
+}
+
+.file-kind-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .file-label {
   min-width: 0;
   display: grid;
@@ -1018,6 +1129,7 @@ input:focus-visible {
   .tool-strip,
   .projects-section,
   .approach-section,
+  .craft-section,
   .site-footer,
   .project-detail {
     padding-left: 5%;
@@ -1181,6 +1293,15 @@ input:focus-visible {
     padding: 70px 5%;
   }
 
+  .craft-section {
+    padding: 70px 5% 76px;
+  }
+
+  .craft-grid,
+  .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
   .site-footer {
     padding: 25px 5%;
     flex-wrap: wrap;
@@ -1221,6 +1342,10 @@ input:focus-visible {
   .detail-columns {
     gap: 36px;
     padding-top: 34px;
+  }
+
+  .project-showcases {
+    padding-top: 50px;
   }
 
   .detail-content > h2 {

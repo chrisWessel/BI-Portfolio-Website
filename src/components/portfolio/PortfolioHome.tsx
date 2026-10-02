@@ -212,6 +212,45 @@ export function PortfolioHome() {
           )}
         </section>
 
+        <section className="craft-section" aria-labelledby="craft-title">
+          <div className="section-heading">
+            <div>
+              <span className="eyebrow">SQL · DATA MODELLING</span>
+              <h2 id="craft-title">Built to answer<br /><em>better questions.</em></h2>
+            </div>
+            <p>
+              A clear result depends on what happens before the chart: reliable
+              transformations, focused SQL and a model that makes analysis easy.
+            </p>
+          </div>
+          <div className="craft-grid">
+            <Link className="craft-card" href="/projects/hospital-operations">
+              <div className="craft-image">
+                <Image
+                  src="/projects/hospital-operations/sql/hospital-operations-query.svg"
+                  alt="SQL code preview of a hospital operations aggregation query"
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 800px) 100vw, 50vw"
+                />
+              </div>
+              <div><span className="eyebrow">01 · SQL</span><h3>From raw visits to useful measures</h3><span className="craft-link">Explore the project <ArrowRight size={15} aria-hidden="true" /></span></div>
+            </Link>
+            <Link className="craft-card" href="/projects/hospital-operations">
+              <div className="craft-image">
+                <Image
+                  src="/projects/hospital-operations/star-schema.svg"
+                  alt="Illustrative hospital operations star schema with a central visit fact table and eight dimensions"
+                  width={1600}
+                  height={900}
+                  sizes="(max-width: 800px) 100vw, 50vw"
+                />
+              </div>
+              <div><span className="eyebrow">02 · DATA MODELLING</span><h3>A star schema built for exploration</h3><span className="craft-link">Explore the project <ArrowRight size={15} aria-hidden="true" /></span></div>
+            </Link>
+          </div>
+        </section>
+
         <section className="approach-section" id="approach">
           <div className="approach-title">
             <span className="eyebrow">THE THINKING BEHIND THE CHARTS</span>

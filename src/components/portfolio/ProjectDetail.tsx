@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, ArrowUpRight, Download, FileArchive, FileSpreadsheet, FileText, LockKeyhole } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, Download, FileArchive, FileSpreadsheet, FileText, Image as ImageIcon, LockKeyhole } from "lucide-react";
 import type { PortfolioProject } from "@/data/portfolio";
 
 function FileIcon({ format }: { format: string }) {
   if (format === "XLSX" || format === "XLSM" || format === "XLSB" || format === "CSV") {
     return <FileSpreadsheet size={18} aria-hidden="true" />;
   }
+  if (format === "PNG" || format === "SVG") return <ImageIcon size={18} aria-hidden="true" />;
   if (format === "ZIP") return <FileArchive size={18} aria-hidden="true" />;
   return <FileText size={18} aria-hidden="true" />;
 }
@@ -14,6 +15,14 @@ function FileIcon({ format }: { format: string }) {
 export function ProjectDetail({ project }: { project: PortfolioProject }) {
   const dashboardFiles = project.files.filter((file) => file.group === "Dashboard");
   const otherFiles = project.files.filter((file) => file.group !== "Dashboard");
+  const hasPowerBiFile = project.files.some((file) => file.format === "PBIX");
+  const hasExcelFile = project.files.some((file) =>
+    ["XLSX", "XLSM", "XLSB"].includes(file.format),
+  );
+  const availableApps = [
+    hasPowerBiFile && "Power BI Desktop",
+    hasExcelFile && "Microsoft Excel",
+  ].filter(Boolean).join(" or ");
 
   return (
     <>
@@ -51,6 +60,34 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
           )}
         </section>
 
+        {project.showcases && project.showcases.length > 0 && (
+          <section className="project-showcases" aria-label="SQL and data modelling examples">
+            <div className="showcase-heading">
+              <span className="eyebrow">UNDER THE HOOD</span>
+              <h2>How the analysis is built.</h2>
+            </div>
+            <div className="showcase-grid">
+              {project.showcases.map((showcase) => (
+                <article className="showcase-card" key={showcase.image}>
+                  <div className="showcase-image">
+                    <Image
+                      src={showcase.image}
+                      alt={showcase.alt}
+                      width={1600}
+                      height={900}
+                      sizes="(max-width: 800px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="showcase-copy">
+                    <h3>{showcase.title}</h3>
+                    <p>{showcase.description}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+        )}
+
         <div className="detail-columns">
           <section className="detail-content">
             <span className="eyebrow">THE PROJECT</span>
@@ -64,10 +101,12 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
                 <p>{project.notice}</p>
               </aside>
             )}
-            <div className="open-in-app">
-              <strong>Want to explore the interactive report?</strong>
-              <p>Download the PBIX or Excel workbook and open it in Power BI Desktop or Microsoft Excel.</p>
-            </div>
+            {availableApps && (
+              <div className="open-in-app">
+                <strong>Want to explore the interactive report?</strong>
+                <p>Download the available report or workbook and open it in {availableApps}.</p>
+              </div>
+            )}
           </section>
 
           <aside className="downloads-panel">
@@ -111,7 +150,13 @@ function FileGroup({
       <ul>
         {files.map((file) => (
           <li key={file.path}>
-            <span className="file-kind"><FileIcon format={file.format} /></span>
+            <span className={`file-kind${file.format === "PNG" ? " file-kind-preview" : ""}`}>
+              {file.format === "PNG" ? (
+                <Image src={file.path} alt="" width={52} height={52} />
+              ) : (
+                <FileIcon format={file.format} />
+              )}
+            </span>
             <span className="file-label"><strong>{file.label}</strong><small>{file.format} · {file.group}</small></span>
             <a href={file.path} download aria-label={`Download ${file.label} (${file.format})`}>
               <Download size={17} aria-hidden="true" />

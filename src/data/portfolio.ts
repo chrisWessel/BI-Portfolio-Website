@@ -15,6 +15,12 @@ export type PortfolioProject = {
   tools: string[];
   highlights: string[];
   files: PortfolioFile[];
+  showcases?: {
+    title: string;
+    description: string;
+    image: string;
+    alt: string;
+  }[];
   notice?: string;
 };
 
@@ -36,8 +42,6 @@ export const portfolioProjects: PortfolioProject[] = [
     files: [
       { label: "Financial dashboard", path: "/projects/financial-performance/financial-dashboard.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Dashboard export", path: "/projects/financial-performance/financial-dashboard.pdf", format: "PDF", group: "Dashboard" },
-      { label: "Ultimate Dashboard workbook", path: "/projects/financial-performance/ultimate-dashboard.xlsx", format: "XLSX", group: "Dashboard" },
-      { label: "Ultimate Dashboard copy", path: "/projects/financial-performance/ultimate-dashboard-copy.xlsx", format: "XLSX", group: "Dashboard" },
       { label: "Dashboard data model", path: "/projects/financial-performance/ultimate-dashboard-data-model.xlsx", format: "XLSX", group: "Source data" },
       { label: "Worksheet — Alteryx version", path: "/projects/financial-performance/ultimate-dashboard-worksheet-alteryx.xlsx", format: "XLSX", group: "Source data" },
       { label: "Dashboard worksheet", path: "/projects/financial-performance/ultimate-dashboard-worksheet.xlsx", format: "XLSX", group: "Source data" },
@@ -71,6 +75,20 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Providers", path: "/projects/hospital-operations/data/providers.csv", format: "CSV", group: "Source data" },
       { label: "Visits", path: "/projects/hospital-operations/data/visits.csv", format: "CSV", group: "Source data" },
     ],
+    showcases: [
+      {
+        title: "SQL for operational analysis",
+        description: "Clean visit data and summarize service volume, cost and satisfaction with T-SQL.",
+        image: "/projects/hospital-operations/sql/hospital-operations-query.svg",
+        alt: "SQL code preview showing a hospital operations query grouped by service type",
+      },
+      {
+        title: "A star schema for visit analysis",
+        description: "A dimensional model that connects visit measures to date, patient, provider and service dimensions.",
+        image: "/projects/hospital-operations/star-schema.svg",
+        alt: "Illustrative star schema with a central FactVisit table connected to eight dimensions",
+      },
+    ],
     notice:
       "The supplied healthcare project records were confirmed as synthetic by the portfolio owner. This dashboard is for analytics demonstration only, not for clinical decision-making.",
   },
@@ -97,6 +115,14 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Medical condition lookup copy", path: "/projects/healthcare-analytics/medical-condition-copy.xlsx", format: "XLSX", group: "Source data" },
       { label: "Medication lookup", path: "/projects/healthcare-analytics/medication.xlsx", format: "XLSX", group: "Source data" },
       { label: "Healthcare utilization SQL", path: "/projects/healthcare-analytics/sql/healthcare-utilization.sql", format: "SQL", group: "SQL" },
+    ],
+    showcases: [
+      {
+        title: "SQL for utilization trends",
+        description: "Normalize source fields and compare encounter volume, billing and length of stay.",
+        image: "/projects/healthcare-analytics/sql/healthcare-utilization-query.svg",
+        alt: "SQL code preview showing a healthcare utilization summary by medical condition",
+      },
     ],
     notice:
       "The supplied healthcare records were confirmed as synthetic by the portfolio owner. This is a descriptive analytics example, not a diagnostic or clinical decision-support tool.",
@@ -182,6 +208,14 @@ export const portfolioProjects: PortfolioProject[] = [
     files: [
       { label: "Stroke detection dashboard", path: "/projects/stroke-data-exploration/stroke-detection.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Stroke detection source data", path: "/projects/stroke-data-exploration/stroke-detection-data.xlsx", format: "XLSX", group: "Source data" },
+      { label: "Dashboard background — light", path: "/projects/stroke-data-exploration/assets/stroke-background-light.png", format: "PNG", group: "Documentation" },
+      { label: "Dashboard background — alternate", path: "/projects/stroke-data-exploration/assets/stroke-background-alternate.png", format: "PNG", group: "Documentation" },
+      { label: "Gender icon", path: "/projects/stroke-data-exploration/assets/gender-icon.png", format: "PNG", group: "Documentation" },
+      { label: "Insights icon", path: "/projects/stroke-data-exploration/assets/insights-icon.png", format: "PNG", group: "Documentation" },
+      { label: "Insights icon — alternate", path: "/projects/stroke-data-exploration/assets/insights-icon-alternate.png", format: "PNG", group: "Documentation" },
+      { label: "Home navigation icon", path: "/projects/stroke-data-exploration/assets/home-navigation-icon.png", format: "PNG", group: "Documentation" },
+      { label: "Navigation icon — alternate", path: "/projects/stroke-data-exploration/assets/navigation-icon-alternate.png", format: "PNG", group: "Documentation" },
+      { label: "Global analysis icon", path: "/projects/stroke-data-exploration/assets/global-analysis-icon.png", format: "PNG", group: "Documentation" },
     ],
     notice:
       "This portfolio project is for descriptive analysis only. It does not provide a diagnosis, individual risk estimate or medical advice.",
@@ -197,13 +231,22 @@ export const portfolioProjects: PortfolioProject[] = [
     highlights: [
       "Compare overall and service-attribute ratings by airline.",
       "Explore recommendation share by travel class.",
-      "SQL examples show aggregation without reviewer identities or verbatim text.",
+      "Review the SQL analysis and its privacy-conscious aggregation approach.",
     ],
     files: [
       { label: "Airline review analysis SQL", path: "/projects/airline-customer-experience/sql/airline-reviews.sql", format: "SQL", group: "SQL" },
+      { label: "Airline ratings data (de-identified)", path: "/projects/airline-customer-experience/data/airline-review-ratings-deidentified.csv", format: "CSV", group: "Source data" },
+    ],
+    showcases: [
+      {
+        title: "SQL for customer experience",
+        description: "Aggregate airline ratings and recommendation patterns without exposing reviewer names or written reviews.",
+        image: "/projects/airline-customer-experience/sql/airline-reviews-query.svg",
+        alt: "SQL code preview showing airline ratings aggregated by airline and travel class",
+      },
     ],
     notice:
-      "The original airline dataset contains reviewer names and free-text reviews, and the PBIX may embed those records. Both are withheld until a sanitized CSV and matching sanitized Power BI report are provided.",
+      "The published CSV omits reviewer names, review titles and free-text reviews. The original PBIX is held back because it may embed those fields; a de-identified report can replace it. Fastjet materials are a separate project and remain excluded.",
   },
 ];
 
