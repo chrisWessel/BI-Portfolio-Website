@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Wessel Tangai — Business Intelligence Portfolio
 
-## Getting Started
+A portfolio website for showcasing Power BI and Excel dashboards, analytics case studies, SQL examples, and downloadable project files.
 
-First, run the development server:
+## Run locally
 
 ```bash
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000). The project gallery supports category filters and search; each project page includes its dashboard preview and the available downloadable files.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build for production
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run lint
+npm run build
+npm run start
+```
 
-## Learn More
+## Project files
 
-To learn more about Next.js, take a look at the following resources:
+Dashboard files and source data that are approved for publication are stored under `public/projects/` and linked from the project catalogue in `src/data/portfolio.ts`. Previews are also served from `public/projects/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Power BI (`.pbix`) and Excel (`.xlsx`, `.xlsm`, `.xlsb`) files are downloads, not live web embeds. Visitors can open them in Power BI Desktop or Excel. PDF previews and screenshots provide an immediate browser view.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The checked-in portfolio source excludes Fastjet company-finance files. Airline reviewer data and its report are withheld until sanitized equivalents are available, because the report can embed the original names and free-text reviews.
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Import the GitHub repository into Vercel and deploy it as a Next.js project. No environment variables are required for the portfolio pages.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Before publishing additional files, check that you have permission to share them and that reports, workbooks, and datasets do not expose personal or confidential information.
