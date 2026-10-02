@@ -719,7 +719,7 @@ input:focus-visible {
   grid-template-columns: 1fr;
 }
 
-.project-showcases .showcase-grid-artwork {
+.project-showcases .showcase-grid-multiple {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
@@ -752,21 +752,6 @@ input:focus-visible {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.showcase-image-artwork {
-  min-height: 220px;
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  background: #f2f2ed;
-}
-
-.showcase-image-artwork img {
-  width: auto;
-  max-width: 100%;
-  height: clamp(160px, 22vw, 260px);
-  object-fit: contain;
 }
 
 .craft-card > div:last-child,
@@ -965,6 +950,53 @@ input:focus-visible {
   top: 15px;
   left: 0;
   color: var(--accent);
+}
+
+.recommendation-panel {
+  max-width: 620px;
+  margin-top: 30px;
+  padding: 22px;
+  background: var(--deep);
+  color: var(--paper-bright);
+}
+
+.recommendation-panel .eyebrow {
+  color: #a9b6a9;
+}
+
+.recommendation-panel h3 {
+  margin: 8px 0 15px;
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: -.045em;
+}
+
+.recommendation-panel ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: recommendation;
+}
+
+.recommendation-panel li {
+  display: grid;
+  grid-template-columns: 25px 1fr;
+  gap: 9px;
+  padding: 13px 0;
+  border-top: 1px solid rgba(255, 255, 255, .17);
+  color: #d5ddd5;
+  font-size: 11px;
+  line-height: 1.75;
+  counter-increment: recommendation;
+}
+
+.recommendation-panel li::before {
+  content: counter(recommendation, decimal-leading-zero);
+  padding-top: 1px;
+  color: var(--lime);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .05em;
 }
 
 .project-notice {
@@ -1323,6 +1355,10 @@ input:focus-visible {
 
   .craft-grid,
   .showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-showcases .showcase-grid-multiple {
     grid-template-columns: 1fr;
   }
 

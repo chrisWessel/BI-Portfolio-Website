@@ -51,12 +51,19 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
             <div className="detail-tools">{project.tools.map((tool) => <span className="tool-tag" key={tool}>{tool}</span>)}</div>
           </div>
           {project.preview ? (
-            <div className="detail-preview">
+            <div
+              className="detail-preview"
+              style={
+                project.previewWidth && project.previewHeight
+                  ? { aspectRatio: `${project.previewWidth} / ${project.previewHeight}` }
+                  : undefined
+              }
+            >
               <Image
                 src={project.preview}
                 alt={project.previewAlt ?? `${project.title} dashboard preview`}
-                width={1280}
-                height={720}
+                width={project.previewWidth ?? 1280}
+                height={project.previewHeight ?? 720}
                 priority
                 sizes="(max-width: 800px) 100vw, 50vw"
                 style={{ objectFit: "contain", objectPosition: "center" }}
@@ -74,17 +81,16 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
               <span className="eyebrow">PROJECT VISUALS</span>
               <h2>Inside the project.</h2>
             </div>
-            <div className={`showcase-grid${project.showcases.some((showcase) => showcase.kind === "embedded-image") ? " showcase-grid-artwork" : ""}`}>
+            <div className={`showcase-grid${project.showcases.length > 1 ? " showcase-grid-multiple" : ""}`}>
               {project.showcases.map((showcase) => (
                 <article className="showcase-card" key={showcase.image}>
-                  <div className={`showcase-image${showcase.kind === "embedded-image" ? " showcase-image-artwork" : ""}`}>
+                  <div className="showcase-image">
                     <Image
                       src={showcase.image}
                       alt={showcase.alt}
-                      width={showcase.kind === "embedded-image" ? 800 : 1600}
-                      height={showcase.kind === "embedded-image" ? 800 : 900}
+                      width={showcase.width ?? 1600}
+                      height={showcase.height ?? 900}
                       sizes="(max-width: 800px) 100vw, 50vw"
-                      style={showcase.kind === "embedded-image" ? { objectFit: "contain" } : undefined}
                     />
                   </div>
                   <div className="showcase-copy">
@@ -104,6 +110,15 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
             <ul className="highlight-list">
               {project.highlights.map((highlight) => <li key={highlight}>{highlight}</li>)}
             </ul>
+            <section className="recommendation-panel" aria-labelledby="recommendation-heading">
+              <span className="eyebrow">INSIGHT-LED NEXT STEPS</span>
+              <h3 id="recommendation-heading">Recommendations</h3>
+              <ol>
+                {project.recommendations.map((recommendation) => (
+                  <li key={recommendation}>{recommendation}</li>
+                ))}
+              </ol>
+            </section>
             {project.notice && (
               <aside className="project-notice">
                 <LockKeyhole size={17} aria-hidden="true" />

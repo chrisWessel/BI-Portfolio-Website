@@ -12,17 +12,21 @@ export type PortfolioProject = {
   summary: string;
   description: string;
   preview?: string;
+  previewWidth?: number;
+  previewHeight?: number;
   previewAlt?: string;
   previewLabel?: string;
   tools: string[];
   highlights: string[];
+  recommendations: string[];
   files: PortfolioFile[];
   showcases?: {
     title: string;
     description: string;
     image: string;
     alt: string;
-    kind?: "embedded-image";
+    width?: number;
+    height?: number;
   }[];
   notice?: string;
 };
@@ -42,6 +46,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Investigate budget variances by department and expense group.",
       "Explore the original report and supporting workbook versions.",
     ],
+    recommendations: [
+      "Investigate recurring adverse budget variances by department and expense group; separate timing, volume and cost-rate drivers before changing budgets.",
+      "Use period comparisons to identify sustained revenue, gross-profit or EBITDA movement, then validate the operational drivers with budget owners.",
+      "Track actuals against budget and forecast each reporting period so emerging variances can be addressed early.",
+    ],
     files: [
       { label: "Financial dashboard", path: "/projects/financial-performance/financial-dashboard.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Dashboard export", path: "/projects/financial-performance/financial-dashboard.pdf", format: "PDF", group: "Dashboard" },
@@ -60,6 +69,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Compare monthly visit counts and billed clinical costs.",
       "Explore cost and service patterns by department, diagnosis and procedure.",
       "Use the included SQL example to prepare and summarize visit data.",
+    ],
+    recommendations: [
+      "Review departments and procedures with high billed cost relative to visit volume, then validate case mix and coding with operational owners.",
+      "Compare monthly service demand with costs and patient satisfaction to identify areas for a closer capacity or workflow review.",
+      "Monitor volume, cost and satisfaction together after any operational change; these synthetic records are not a basis for clinical decisions.",
     ],
     files: [
       { label: "Hospital Management dashboard", path: "/projects/hospital-operations/hospital-management-dashboard.pbix", format: "PBIX", group: "Dashboard" },
@@ -106,6 +120,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Review length-of-stay and test-result distributions.",
       "Explore the included analysis workbook and supporting lookup files.",
     ],
+    recommendations: [
+      "Examine condition and time segments associated with longer stays or higher billing, then validate the underlying case mix before acting.",
+      "Review length of stay alongside readmissions and outcomes where those measures are available, rather than optimizing stay duration alone.",
+      "Use the dashboard to frame operational questions only; validate any proposed care changes with qualified clinical teams and real, governed data.",
+    ],
     files: [
       { label: "Healthcare dashboard", path: "/projects/healthcare-analytics/healthcare-dashboard.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Healthcare dataset (CSV)", path: "/projects/healthcare-analytics/healthcare-dataset.csv", format: "CSV", group: "Source data" },
@@ -141,6 +160,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Explore performance by month, market segment and hotel type.",
       "Download the report, analysis workbook and source-data workbooks.",
     ],
+    recommendations: [
+      "Compare realized bookings, revenue and lost revenue across season, hotel type and market segment before adjusting availability or pricing.",
+      "Review revenue and cost together to distinguish profitable demand from volume that adds little to the bottom line.",
+      "Test targeted seasonal or segment offers and evaluate them against profit and booking outcomes before broad rollout.",
+    ],
     files: [
       { label: "Hotel Analysis Power BI report", path: "/projects/hotel-revenue/hotel-analysis.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Hotel Analysis workbook", path: "/projects/hotel-revenue/hotel-analysis-workbook.xlsx", format: "XLSX", group: "Dashboard" },
@@ -163,6 +187,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Explore monthly patterns by vehicle type, road type, area and light conditions.",
       "Download both the interactive dashboard and its source workbook.",
     ],
+    recommendations: [
+      "Prioritize review of road, vehicle, area and lighting cohorts where severe casualty counts cluster, then validate locations with road-safety teams.",
+      "Use traffic exposure or vehicle-mileage denominators when comparing risk across roads or periods; raw casualty counts alone can mislead.",
+      "Evaluate safety interventions with consistent before-and-after severity measures and account for seasonal changes.",
+    ],
     files: [
       { label: "Interactive road accident dashboard", path: "/projects/road-safety/road-accident-dashboard.xlsx", format: "XLSX", group: "Dashboard" },
       { label: "Road accident source data", path: "/projects/road-safety/road-accident-data.xlsx", format: "XLSX", group: "Source data" },
@@ -181,6 +210,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Explore sales revenue, cost of goods sold, profit and margin.",
       "Compare product, customer, location and salesperson performance.",
       "Open the macro-enabled and binary Excel dashboard variants.",
+    ],
+    recommendations: [
+      "Prioritize products and customer segments that contribute sustained profit, not just high sales revenue.",
+      "Investigate low-margin products and locations to understand cost or pricing drivers before using broad discounts.",
+      "Use salesperson and customer breakdowns to identify support or growth opportunities, comparing like-for-like sales periods.",
     ],
     files: [
       { label: "WT sales analysis dashboard", path: "/projects/sales-performance/wt-biscuits-sales-analysis.xlsm", format: "XLSM", group: "Dashboard" },
@@ -205,6 +239,11 @@ export const portfolioProjects: PortfolioProject[] = [
       "Compare monthly revenue with targets and review store-level variances.",
       "Explore sales and profit performance by customer, product and category.",
       "Download the interactive Excel dashboard, supporting data tables and dashboard screenshots.",
+    ],
+    recommendations: [
+      "Review stores with repeated shortfalls against monthly targets and agree on a focused recovery action with each store lead.",
+      "Prioritize product and category decisions using profit contribution alongside revenue and target variance.",
+      "Track store performance over comparable months to separate persistent gaps from seasonality or one-off fluctuations.",
     ],
     files: [
       { label: "Wes Business sales dashboard", path: "/projects/wes-business-sales/wes-business-sales-dashboard.xlsb", format: "XLSB", group: "Dashboard" },
@@ -237,24 +276,23 @@ export const portfolioProjects: PortfolioProject[] = [
       "Download the report and source workbook.",
       "Use the visuals for data exploration only—not diagnosis or individual risk assessment.",
     ],
+    recommendations: [
+      "Treat the age and health-condition patterns as population-level associations to investigate, not causal findings or individual risk estimates.",
+      "Validate cohort sizes, missing values and category definitions before comparing the reported percentages or sharing conclusions.",
+      "Do not use this dashboard to guide screening or care; any future health intervention would need qualified clinical review and independent validation.",
+    ],
     files: [
       { label: "Stroke detection dashboard", path: "/projects/stroke-data-exploration/stroke-detection.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Stroke detection source data", path: "/projects/stroke-data-exploration/stroke-detection-data.xlsx", format: "XLSX", group: "Source data" },
     ],
     showcases: [
       {
-        title: "Health data exploration",
-        description: "An analytical illustration embedded in the Power BI report.",
-        image: "/projects/stroke-data-exploration/assets/insights-icon.png",
-        alt: "Magnifying glass with a bar chart illustration embedded in the Stroke Power BI report",
-        kind: "embedded-image",
-      },
-      {
-        title: "Location context",
-        description: "A report illustration used to support geographic exploration.",
-        image: "/projects/stroke-data-exploration/assets/navigation-icon.png",
-        alt: "Map pin with a house illustration embedded in the Stroke Power BI report",
-        kind: "embedded-image",
+        title: "Stroke probability insights",
+        description: "The report compares population-level patterns by age, gender, marital status and reported health conditions.",
+        image: "/projects/stroke-data-exploration/assets/stroke-probability-insights.png",
+        alt: "Stroke Probability Insights report page with population-level comparisons by age, gender, marital status, hypertension and heart disease",
+        width: 1207,
+        height: 677,
       },
     ],
     notice:
@@ -268,6 +306,8 @@ export const portfolioProjects: PortfolioProject[] = [
     description:
       "A review-analysis project exploring overall ratings, service attributes, travel class, routes and recommendation patterns.",
     preview: "/projects/airline-customer-experience/assets/airline-dashboard-hero.png",
+    previewWidth: 997,
+    previewHeight: 746,
     previewAlt: "Airline Review Analysis Power BI dashboard showing review ratings, recommendation rates and trends",
     previewLabel: "AIRLINE REVIEW ANALYSIS DASHBOARD",
     tools: ["Power BI", "SQL Server", "Data modelling"],
@@ -276,31 +316,32 @@ export const portfolioProjects: PortfolioProject[] = [
       "Explore recommendation share by travel class.",
       "Review the SQL analysis and its privacy-conscious aggregation approach.",
     ],
+    recommendations: [
+      "Prioritize seat-comfort improvements on key routes, especially in economy and premium-economy classes; pilot changes and track class-specific ratings and recommendations.",
+      "Protect strengths in staff service and inflight entertainment through continued training and recognition, while monitoring service ratings over time.",
+      "Investigate lower value-for-money scores by comparing fares and included benefits by route and class; test targeted offers before making broad pricing changes.",
+      "Track recommendation rate alongside review volume and overall ratings to assess whether service changes improve customer experience.",
+    ],
     files: [
       { label: "Airline review analysis SQL", path: "/projects/airline-customer-experience/sql/airline-reviews.sql", format: "SQL", group: "SQL" },
       { label: "Airline ratings data (de-identified)", path: "/projects/airline-customer-experience/data/airline-review-ratings-deidentified.csv", format: "CSV", group: "Source data" },
     ],
     showcases: [
       {
-        title: "Customer experience",
-        description: "A customer-experience illustration embedded in the Power BI report.",
-        image: "/projects/airline-customer-experience/assets/customer-experience-icon.png",
-        alt: "Customer experience illustration embedded in the Airline Power BI report",
-        kind: "embedded-image",
+        title: "Airline reviews",
+        description: "Review-level ratings can be explored by airline, route, class and service attribute; the public screenshot excludes reviewer names and free-text comments.",
+        image: "/projects/airline-customer-experience/assets/airline-report-rows.png",
+        alt: "Airline Review Analysis report table showing airline, route, class, customer segment, service ratings and recommendations",
+        width: 996,
+        height: 742,
       },
       {
-        title: "Ratings",
-        description: "A ratings illustration embedded in the Power BI report.",
-        image: "/projects/airline-customer-experience/assets/rating-icon.png",
-        alt: "Star rating and positive feedback illustration embedded in the Airline Power BI report",
-        kind: "embedded-image",
-      },
-      {
-        title: "Recommendations",
-        description: "A recommendation illustration embedded in the Power BI report.",
-        image: "/projects/airline-customer-experience/assets/recommendation-icon.png",
-        alt: "Recommendation and thumbs-up illustration embedded in the Airline Power BI report",
-        kind: "embedded-image",
+        title: "Insights and recommendations",
+        description: "The report connects rating patterns to proposed actions on seat comfort, staff service, inflight entertainment and value for money.",
+        image: "/projects/airline-customer-experience/assets/airline-insights-recommendations.png",
+        alt: "Airline report page summarizing customer-experience insights, recommendations and proposed service actions",
+        width: 991,
+        height: 727,
       },
       {
         title: "SQL for customer experience",
