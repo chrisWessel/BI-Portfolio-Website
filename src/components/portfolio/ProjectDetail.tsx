@@ -54,7 +54,7 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
             <div className="detail-preview">
               <Image
                 src={project.preview}
-                alt={`${project.title} dashboard preview`}
+                alt={project.previewAlt ?? `${project.title} dashboard preview`}
                 width={1280}
                 height={720}
                 priority

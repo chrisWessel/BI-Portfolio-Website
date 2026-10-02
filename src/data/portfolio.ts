@@ -12,6 +12,7 @@ export type PortfolioProject = {
   summary: string;
   description: string;
   preview?: string;
+  previewAlt?: string;
   previewLabel?: string;
   tools: string[];
   highlights: string[];
@@ -227,8 +228,9 @@ export const portfolioProjects: PortfolioProject[] = [
     summary: "A descriptive exploration of patterns in synthetic health-related data.",
     description:
       "A Power BI exploration of a supplied stroke-related dataset. The project is presented strictly as descriptive visualization and is not a clinical tool.",
-    preview: "/projects/stroke-data-exploration/assets/hospital-illustration.png",
-    previewLabel: "IMAGE FROM POWER BI REPORT",
+    preview: "/projects/stroke-data-exploration/assets/stroke-dashboard-hero.png",
+    previewAlt: "Patient Risk Profile Overview Power BI dashboard with stroke patient KPIs and analysis charts",
+    previewLabel: "STROKE DETECTION DASHBOARD",
     tools: ["Power BI", "Excel", "Data modelling"],
     highlights: [
       "Explore distributions in the supplied dataset.",
@@ -265,8 +267,9 @@ export const portfolioProjects: PortfolioProject[] = [
     summary: "Airline ratings and service experience across routes and travel classes.",
     description:
       "A review-analysis project exploring overall ratings, service attributes, travel class, routes and recommendation patterns.",
-    preview: "/projects/airline-customer-experience/assets/airplane-illustration.png",
-    previewLabel: "IMAGE FROM POWER BI REPORT",
+    preview: "/projects/airline-customer-experience/assets/airline-dashboard-hero.png",
+    previewAlt: "Airline Review Analysis Power BI dashboard showing review ratings, recommendation rates and trends",
+    previewLabel: "AIRLINE REVIEW ANALYSIS DASHBOARD",
     tools: ["Power BI", "SQL Server", "Data modelling"],
     highlights: [
       "Compare overall and service-attribute ratings by airline.",
