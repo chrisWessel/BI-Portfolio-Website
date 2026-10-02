@@ -1,5 +1,9 @@
 # Wessel Tangai — Business Intelligence Portfolio
 
+<div align="center">
+  <img src="public/wessel-tangai.jpg" alt="Portrait of Wessel Tangai" width="150">
+</div>
+
 A portfolio website for showcasing Power BI and Excel dashboards, analytics case studies, SQL examples, and downloadable project files.
 
 ## Run locally

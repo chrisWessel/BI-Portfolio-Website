@@ -83,15 +83,14 @@ input:focus-visible {
   letter-spacing: .14em;
 }
 
-.wordmark-mark {
-  width: 34px;
-  height: 34px;
-  display: grid;
-  place-items: center;
-  background: var(--accent);
-  color: white;
-  font-size: 11px;
-  letter-spacing: -.08em;
+.wordmark-photo {
+  width: 40px;
+  height: 40px;
+  flex: 0 0 auto;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: white;
+  object-fit: cover;
 }
 
 .main-nav {
@@ -1225,9 +1224,9 @@ input:focus-visible {
     font-size: 9px;
   }
 
-  .wordmark-mark {
-    width: 30px;
-    height: 30px;
+  .wordmark-photo {
+    width: 34px;
+    height: 34px;
   }
 
   .main-nav {

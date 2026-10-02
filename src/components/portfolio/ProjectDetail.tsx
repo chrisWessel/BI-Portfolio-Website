@@ -28,7 +28,7 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
     <>
       <header className="site-header">
         <Link className="wordmark" href="/">
-          <span className="wordmark-mark">WT</span>
+          <Image className="wordmark-photo" src="/wessel-tangai.jpg" alt="" width={40} height={40} priority />
           <span>WESSEL TANGAI</span>
         </Link>
         <nav className="main-nav" aria-label="Main navigation">
@@ -152,7 +152,7 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
       </main>
 
       <footer className="site-footer">
-        <Link className="wordmark" href="/"><span className="wordmark-mark">WT</span><span>WESSEL TANGAI</span></Link>
+        <Link className="wordmark" href="/"><Image className="wordmark-photo" src="/wessel-tangai.jpg" alt="" width={40} height={40} /><span>WESSEL TANGAI</span></Link>
         <p>Curious about the data. Serious about the details.</p>
         <Link href="/#projects">All projects <ArrowUpRight size={14} aria-hidden="true" /></Link>
         <span>© {new Date().getFullYear()} Wessel Tangai</span>

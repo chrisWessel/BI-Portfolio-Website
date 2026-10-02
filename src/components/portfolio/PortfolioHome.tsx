@@ -38,7 +38,7 @@ export function PortfolioHome() {
     <>
       <header className="site-header">
         <a className="wordmark" href="#top" aria-label="Wessel Tangai home">
-          <span className="wordmark-mark">WT</span>
+          <Image className="wordmark-photo" src="/wessel-tangai.jpg" alt="" width={40} height={40} priority />
           <span>WESSEL TANGAI</span>
         </a>
         <nav className="main-nav" aria-label="Main navigation">
@@ -266,7 +266,7 @@ export function PortfolioHome() {
       </main>
 
       <footer className="site-footer">
-        <a className="wordmark" href="#top"><span className="wordmark-mark">WT</span><span>WESSEL TANGAI</span></a>
+        <a className="wordmark" href="#top"><Image className="wordmark-photo" src="/wessel-tangai.jpg" alt="" width={40} height={40} /><span>WESSEL TANGAI</span></a>
         <p>Curious about the data. Serious about the details.</p>
         <a href="https://github.com/chrisWessel/BI-Portfolio" target="_blank" rel="noreferrer">Portfolio repository <ExternalLink size={14} aria-hidden="true" /></a>
         <span>© {new Date().getFullYear()} Wessel Tangai</span>
