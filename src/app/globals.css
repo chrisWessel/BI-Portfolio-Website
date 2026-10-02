@@ -872,7 +872,8 @@ input:focus-visible {
 }
 
 .detail-preview img {
-  object-position: top left;
+  object-position: center;
+  object-fit: contain;
 }
 
 .detail-preview > span {

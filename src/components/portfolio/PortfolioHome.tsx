@@ -108,7 +108,7 @@ export function PortfolioHome() {
             </div>
           </div>
 
-          <span className="hero-index" aria-hidden="true">01 — 08</span>
+          <span className="hero-index" aria-hidden="true">01 — {String(portfolioProjects.length).padStart(2, "0")}</span>
         </section>
 
         <section className="tool-strip" aria-label="Core tools">

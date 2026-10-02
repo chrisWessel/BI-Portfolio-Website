@@ -190,6 +190,35 @@ export const portfolioProjects: PortfolioProject[] = [
       "The XLSM workbook contains macros. Review macros according to your organization's security practices before enabling them in Excel.",
   },
   {
+    slug: "wes-business-sales",
+    title: "Wes Business sales dashboard",
+    category: "Sales",
+    summary: "Sales, revenue targets and profit performance across stores and products.",
+    description:
+      "An interactive Excel sales dashboard that compares revenue with monthly targets, explores store performance and highlights product and customer profitability.",
+    preview: "/projects/wes-business-sales/assets/dashboard-timeframe.png",
+    tools: ["Excel", "Power Query", "Data modelling"],
+    highlights: [
+      "Compare monthly revenue with targets and review store-level variances.",
+      "Explore sales and profit performance by customer, product and category.",
+      "Download the interactive Excel dashboard, supporting data tables and dashboard screenshots.",
+    ],
+    files: [
+      { label: "Wes Business sales dashboard", path: "/projects/wes-business-sales/wes-business-sales-dashboard.xlsb", format: "XLSB", group: "Dashboard" },
+      { label: "Dashboard — TimeFrame view", path: "/projects/wes-business-sales/assets/dashboard-timeframe.png", format: "PNG", group: "Documentation" },
+      { label: "Dashboard — Store view", path: "/projects/wes-business-sales/assets/dashboard-store.png", format: "PNG", group: "Documentation" },
+      { label: "Dashboard — Profit view", path: "/projects/wes-business-sales/assets/dashboard-profit.png", format: "PNG", group: "Documentation" },
+      { label: "Customer data", path: "/projects/wes-business-sales/data/customers_table.csv", format: "CSV", group: "Source data" },
+      { label: "Sales transactions", path: "/projects/wes-business-sales/data/fact_table.csv", format: "CSV", group: "Source data" },
+      { label: "Monthly store targets", path: "/projects/wes-business-sales/data/monthly_store_targets.csv", format: "CSV", group: "Source data" },
+      { label: "Product data", path: "/projects/wes-business-sales/data/products_table.csv", format: "CSV", group: "Source data" },
+      { label: "Salesperson data", path: "/projects/wes-business-sales/data/sales_persons_table.csv", format: "CSV", group: "Source data" },
+      { label: "Dashboard tasks", path: "/projects/wes-business-sales/dashboard-tasks.pdf", format: "PDF", group: "Documentation" },
+    ],
+    notice:
+      "The workbook and supporting records were confirmed as synthetic or cleared for public portfolio release.",
+  },
+  {
     slug: "stroke-data-exploration",
     title: "Stroke data exploration",
     category: "Healthcare",
@@ -205,14 +234,6 @@ export const portfolioProjects: PortfolioProject[] = [
     files: [
       { label: "Stroke detection dashboard", path: "/projects/stroke-data-exploration/stroke-detection.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Stroke detection source data", path: "/projects/stroke-data-exploration/stroke-detection-data.xlsx", format: "XLSX", group: "Source data" },
-      { label: "Dashboard background — light", path: "/projects/stroke-data-exploration/assets/stroke-background-light.png", format: "PNG", group: "Documentation" },
-      { label: "Dashboard background — alternate", path: "/projects/stroke-data-exploration/assets/stroke-background-alternate.png", format: "PNG", group: "Documentation" },
-      { label: "Gender icon", path: "/projects/stroke-data-exploration/assets/gender-icon.png", format: "PNG", group: "Documentation" },
-      { label: "Insights icon", path: "/projects/stroke-data-exploration/assets/insights-icon.png", format: "PNG", group: "Documentation" },
-      { label: "Insights icon — alternate", path: "/projects/stroke-data-exploration/assets/insights-icon-alternate.png", format: "PNG", group: "Documentation" },
-      { label: "Home navigation icon", path: "/projects/stroke-data-exploration/assets/home-navigation-icon.png", format: "PNG", group: "Documentation" },
-      { label: "Navigation icon — alternate", path: "/projects/stroke-data-exploration/assets/navigation-icon-alternate.png", format: "PNG", group: "Documentation" },
-      { label: "Global analysis icon", path: "/projects/stroke-data-exploration/assets/global-analysis-icon.png", format: "PNG", group: "Documentation" },
     ],
     notice:
       "This portfolio project is for descriptive analysis only. It does not provide a diagnosis, individual risk estimate or medical advice.",

@@ -25,7 +25,7 @@ Dashboard files and source data that are approved for publication are stored und
 
 Power BI (`.pbix`) and Excel (`.xlsx`, `.xlsm`, `.xlsb`) files are downloads, not live web embeds. Visitors can open them in Power BI Desktop or Excel. PDF previews and screenshots provide an immediate browser view.
 
-SQL code previews and the illustrative star-schema diagram are SVGs stored alongside their project files. The Stroke project page includes the report, workbook, and supplied supporting image assets.
+SQL code previews and the illustrative star-schema diagram are SVGs stored alongside their project files. The Wes Business sales project includes its Excel dashboard, cleared source tables, task brief, and dashboard screenshots. The Stroke project page includes the report and source workbook.
 
 Fastjet company-finance files remain excluded. Airline Customer Experience is a separate project; reviewer names and free-text content are not published, and the original PBIX is held back until a de-identified report is available.
 
