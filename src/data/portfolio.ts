@@ -12,6 +12,7 @@ export type PortfolioProject = {
   summary: string;
   description: string;
   preview?: string;
+  previewLabel?: string;
   tools: string[];
   highlights: string[];
   files: PortfolioFile[];
@@ -20,6 +21,7 @@ export type PortfolioProject = {
     description: string;
     image: string;
     alt: string;
+    kind?: "embedded-image";
   }[];
   notice?: string;
 };
@@ -225,6 +227,8 @@ export const portfolioProjects: PortfolioProject[] = [
     summary: "A descriptive exploration of patterns in synthetic health-related data.",
     description:
       "A Power BI exploration of a supplied stroke-related dataset. The project is presented strictly as descriptive visualization and is not a clinical tool.",
+    preview: "/projects/stroke-data-exploration/assets/hospital-illustration.png",
+    previewLabel: "IMAGE FROM POWER BI REPORT",
     tools: ["Power BI", "Excel", "Data modelling"],
     highlights: [
       "Explore distributions in the supplied dataset.",
@@ -234,6 +238,22 @@ export const portfolioProjects: PortfolioProject[] = [
     files: [
       { label: "Stroke detection dashboard", path: "/projects/stroke-data-exploration/stroke-detection.pbix", format: "PBIX", group: "Dashboard" },
       { label: "Stroke detection source data", path: "/projects/stroke-data-exploration/stroke-detection-data.xlsx", format: "XLSX", group: "Source data" },
+    ],
+    showcases: [
+      {
+        title: "Health data exploration",
+        description: "An analytical illustration embedded in the Power BI report.",
+        image: "/projects/stroke-data-exploration/assets/insights-icon.png",
+        alt: "Magnifying glass with a bar chart illustration embedded in the Stroke Power BI report",
+        kind: "embedded-image",
+      },
+      {
+        title: "Location context",
+        description: "A report illustration used to support geographic exploration.",
+        image: "/projects/stroke-data-exploration/assets/navigation-icon.png",
+        alt: "Map pin with a house illustration embedded in the Stroke Power BI report",
+        kind: "embedded-image",
+      },
     ],
     notice:
       "This portfolio project is for descriptive analysis only. It does not provide a diagnosis, individual risk estimate or medical advice.",
@@ -245,6 +265,8 @@ export const portfolioProjects: PortfolioProject[] = [
     summary: "Airline ratings and service experience across routes and travel classes.",
     description:
       "A review-analysis project exploring overall ratings, service attributes, travel class, routes and recommendation patterns.",
+    preview: "/projects/airline-customer-experience/assets/airplane-illustration.png",
+    previewLabel: "IMAGE FROM POWER BI REPORT",
     tools: ["Power BI", "SQL Server", "Data modelling"],
     highlights: [
       "Compare overall and service-attribute ratings by airline.",
@@ -256,6 +278,27 @@ export const portfolioProjects: PortfolioProject[] = [
       { label: "Airline ratings data (de-identified)", path: "/projects/airline-customer-experience/data/airline-review-ratings-deidentified.csv", format: "CSV", group: "Source data" },
     ],
     showcases: [
+      {
+        title: "Customer experience",
+        description: "A customer-experience illustration embedded in the Power BI report.",
+        image: "/projects/airline-customer-experience/assets/customer-experience-icon.png",
+        alt: "Customer experience illustration embedded in the Airline Power BI report",
+        kind: "embedded-image",
+      },
+      {
+        title: "Ratings",
+        description: "A ratings illustration embedded in the Power BI report.",
+        image: "/projects/airline-customer-experience/assets/rating-icon.png",
+        alt: "Star rating and positive feedback illustration embedded in the Airline Power BI report",
+        kind: "embedded-image",
+      },
+      {
+        title: "Recommendations",
+        description: "A recommendation illustration embedded in the Power BI report.",
+        image: "/projects/airline-customer-experience/assets/recommendation-icon.png",
+        alt: "Recommendation and thumbs-up illustration embedded in the Airline Power BI report",
+        kind: "embedded-image",
+      },
       {
         title: "SQL for customer experience",
         description: "Aggregate airline ratings and recommendation patterns without exposing reviewer names or written reviews.",

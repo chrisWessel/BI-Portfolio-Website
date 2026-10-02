@@ -719,6 +719,10 @@ input:focus-visible {
   grid-template-columns: 1fr;
 }
 
+.project-showcases .showcase-grid-artwork {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .craft-card,
 .showcase-card {
   min-width: 0;
@@ -748,6 +752,21 @@ input:focus-visible {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.showcase-image-artwork {
+  min-height: 220px;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: #f2f2ed;
+}
+
+.showcase-image-artwork img {
+  width: auto;
+  max-width: 100%;
+  height: clamp(160px, 22vw, 260px);
+  object-fit: contain;
 }
 
 .craft-card > div:last-child,

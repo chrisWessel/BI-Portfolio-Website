@@ -61,7 +61,7 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
                 sizes="(max-width: 800px) 100vw, 50vw"
                 style={{ objectFit: "contain", objectPosition: "center" }}
               />
-              <span>PROJECT PREVIEW</span>
+              <span>{project.previewLabel ?? "PROJECT PREVIEW"}</span>
             </div>
           ) : (
             <div className="detail-placeholder"><FileSpreadsheet size={46} strokeWidth={1.2} aria-hidden="true" /><span>ANALYTICS PROJECT</span></div>
@@ -69,21 +69,22 @@ export function ProjectDetail({ project }: { project: PortfolioProject }) {
         </section>
 
         {project.showcases && project.showcases.length > 0 && (
-          <section className="project-showcases" aria-label="SQL and data modelling examples">
+          <section className="project-showcases" aria-label="Project visuals and analysis examples">
             <div className="showcase-heading">
-              <span className="eyebrow">UNDER THE HOOD</span>
-              <h2>How the analysis is built.</h2>
+              <span className="eyebrow">PROJECT VISUALS</span>
+              <h2>Inside the project.</h2>
             </div>
-            <div className="showcase-grid">
+            <div className={`showcase-grid${project.showcases.some((showcase) => showcase.kind === "embedded-image") ? " showcase-grid-artwork" : ""}`}>
               {project.showcases.map((showcase) => (
                 <article className="showcase-card" key={showcase.image}>
-                  <div className="showcase-image">
+                  <div className={`showcase-image${showcase.kind === "embedded-image" ? " showcase-image-artwork" : ""}`}>
                     <Image
                       src={showcase.image}
                       alt={showcase.alt}
-                      width={1600}
-                      height={900}
+                      width={showcase.kind === "embedded-image" ? 800 : 1600}
+                      height={showcase.kind === "embedded-image" ? 800 : 900}
                       sizes="(max-width: 800px) 100vw, 50vw"
+                      style={showcase.kind === "embedded-image" ? { objectFit: "contain" } : undefined}
                     />
                   </div>
                   <div className="showcase-copy">
